@@ -1,0 +1,43 @@
+import java.util.*;
+public class Guss
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        Random rn = new Random();
+        int randomNumber = rn.nextInt(1,101);
+        int number, attempts = 0;
+        boolean won = false;
+        System.out.println("do you want to play a simple game? y/n");
+        String opt = sc.nextLine();
+        if(opt.equals("y"))
+        {
+            System.out.print("thats great, now the game is 'guss the number'!\n you have 10 attempts! \n guss a number from 1 to 100: ");
+            while (true)
+            {
+                attempts++;
+                number = sc.nextInt();
+                if (number == randomNumber)
+                {
+                    System.out.println("U gussed the number!, thats great!");
+                    break;
+                }
+                else if (number >= randomNumber && number <= 100)
+                {
+                    System.out.println("the number is less than " + number);
+                }
+                else if (number > 100 || number < 1)
+                {
+                    System.out.println("bruh!, I asked you for a number which is form 1 - 100, try again 😭");
+                }
+                else
+                {
+                    System.out.println("the number is greater than " + number);
+                }
+            }
+        }
+
+        sc.close();
+
+    }
+}
